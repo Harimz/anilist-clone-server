@@ -5,6 +5,8 @@ const connectDB = require("./config/db");
 
 const userRoutes = require("./routes/userRoutes");
 
+const { notFound, errorHandler } = require("./middlewares/errorMiddleware");
+
 dotenv.config();
 
 const app = express();
@@ -17,7 +19,10 @@ app.use(
   })
 );
 
-app.use("/user", userRoutes);
+app.use("/api/users", userRoutes);
+
+app.use(notFound);
+app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
 
