@@ -4,6 +4,8 @@ const cors = require("cors");
 const connectDB = require("./config/db");
 
 const userRoutes = require("./routes/userRoutes");
+const animeRoutes = require("./routes/animeRoutes");
+const mangaRoutes = require("./routes/mangaRoutes");
 
 const { notFound, errorHandler } = require("./middlewares/errorMiddleware");
 
@@ -20,6 +22,8 @@ app.use(
 );
 
 app.use("/api/users", userRoutes);
+app.use("/api/anime", animeRoutes);
+app.use("/api/manga", mangaRoutes);
 
 app.use(notFound);
 app.use(errorHandler);
