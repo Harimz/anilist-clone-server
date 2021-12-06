@@ -17,9 +17,12 @@ const addManga = asyncHandler(async (req, res) => {
     mangaID,
     startDate,
     endDate,
+    mangaType,
+    volumeCount,
+    note,
   } = req.body;
 
-  if (!title || !status || !mangaID) {
+  if (!title || !mangaID) {
     res.status(400);
     throw new Error("Insufficient data provided.");
   } else {
@@ -32,6 +35,9 @@ const addManga = asyncHandler(async (req, res) => {
       mangaID,
       startDate,
       endDate,
+      mangaType,
+      volumeCount,
+      note,
       user: req.user._id,
     });
 

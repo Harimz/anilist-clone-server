@@ -17,9 +17,12 @@ const addAnime = asyncHandler(async (req, res) => {
     animeID,
     startDate,
     endDate,
+    episodeCount,
+    animeType,
+    note,
   } = req.body;
 
-  if (!title || !status || !animeID) {
+  if (!title || !animeID) {
     res.status(400);
     throw new Error("Insufficient data provided.");
   } else {
@@ -32,6 +35,9 @@ const addAnime = asyncHandler(async (req, res) => {
       animeID,
       startDate,
       endDate,
+      episodeCount,
+      animeType,
+      note,
       user: req.user._id,
     });
 

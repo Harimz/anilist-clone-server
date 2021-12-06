@@ -7,7 +7,8 @@ const mangaEntrySchema = new mongoose.Schema({
   },
   status: {
     type: String,
-    required: true,
+    required: false,
+    default: "Plan to Read",
   },
   score: {
     type: Number,
@@ -29,6 +30,11 @@ const mangaEntrySchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  volumeCount: {
+    type: Number,
+    required: false,
+    default: 0,
+  },
   startDate: {
     type: Date,
     required: false,
@@ -36,6 +42,15 @@ const mangaEntrySchema = new mongoose.Schema({
   },
   endDate: {
     type: Date,
+    required: false,
+  },
+  mangaType: {
+    type: String,
+    required: true,
+    default: "NA",
+  },
+  note: {
+    type: String,
     required: false,
   },
   user: {

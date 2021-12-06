@@ -7,7 +7,8 @@ const animeEntrySchema = new mongoose.Schema({
   },
   status: {
     type: String,
-    required: true,
+    required: false,
+    default: "Plan to Watch",
   },
   score: {
     type: Number,
@@ -36,6 +37,21 @@ const animeEntrySchema = new mongoose.Schema({
   },
   endDate: {
     type: Date,
+    required: false,
+    default: null,
+  },
+  episodeCount: {
+    type: Number,
+    required: false,
+    default: 0,
+  },
+  animeType: {
+    type: String,
+    required: true,
+    default: "NA",
+  },
+  note: {
+    type: String,
     required: false,
   },
   user: {
