@@ -2,10 +2,12 @@ const express = require("express");
 const dotenv = require("dotenv");
 const cors = require("cors");
 const connectDB = require("./config/db");
+const bodyParser = require("body-parser");
 
 const userRoutes = require("./routes/userRoutes");
 const animeRoutes = require("./routes/animeRoutes");
 const mangaRoutes = require("./routes/mangaRoutes");
+const statusRoutes = require("./routes/statusRoutes");
 
 const { notFound, errorHandler } = require("./middlewares/errorMiddleware");
 
@@ -20,10 +22,12 @@ app.use(
     origin: ["http://localhost:3000"],
   })
 );
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use("/api/users", userRoutes);
 app.use("/api/anime", animeRoutes);
 app.use("/api/manga", mangaRoutes);
+app.use("/api/status", statusRoutes);
 
 app.use(notFound);
 app.use(errorHandler);
