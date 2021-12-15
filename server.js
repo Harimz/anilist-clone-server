@@ -22,7 +22,6 @@ app.use(
     origin: ["http://localhost:3000"],
   })
 );
-app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use("/api/users", userRoutes);
 app.use("/api/anime", animeRoutes);
