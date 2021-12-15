@@ -15,6 +15,6 @@ router.post("/", authRequired, addAnime);
 
 router.delete("/:id", authRequired, deleteAnime);
 
-router.patch("/:id", authRequired, updateAnime);
+router.put("/:id", authRequired, updateAnime);
 
 module.exports = router;

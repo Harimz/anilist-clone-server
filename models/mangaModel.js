@@ -8,7 +8,7 @@ const mangaEntrySchema = new mongoose.Schema({
   status: {
     type: String,
     required: false,
-    default: "Plan to Read",
+    default: "Reading",
   },
   score: {
     type: Number,
@@ -31,6 +31,11 @@ const mangaEntrySchema = new mongoose.Schema({
     required: true,
   },
   volumeCount: {
+    type: Number,
+    required: false,
+    default: 0,
+  },
+  totalRereads: {
     type: Number,
     required: false,
     default: 0,

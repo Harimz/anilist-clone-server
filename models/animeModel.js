@@ -8,7 +8,7 @@ const animeEntrySchema = new mongoose.Schema({
   status: {
     type: String,
     required: false,
-    default: "Plan to Watch",
+    default: "Watching",
   },
   score: {
     type: Number,
@@ -38,9 +38,13 @@ const animeEntrySchema = new mongoose.Schema({
   endDate: {
     type: Date,
     required: false,
-    default: null,
   },
   episodeCount: {
+    type: Number,
+    required: false,
+    default: 0,
+  },
+  totalRewatches: {
     type: Number,
     required: false,
     default: 0,

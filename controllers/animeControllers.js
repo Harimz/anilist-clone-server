@@ -20,7 +20,10 @@ const addAnime = asyncHandler(async (req, res) => {
     episodeCount,
     animeType,
     note,
+    totalRewatches,
   } = req.body;
+
+  console.log(image);
 
   if (!title || !animeID) {
     res.status(400);
@@ -38,6 +41,7 @@ const addAnime = asyncHandler(async (req, res) => {
       episodeCount,
       animeType,
       note,
+      totalRewatches,
       user: req.user._id,
     });
 
@@ -73,6 +77,8 @@ const updateAnime = asyncHandler(async (req, res) => {
     "episodeProgress",
     "startDate",
     "endDate",
+    "totalRewatches",
+    "note",
   ];
   const isValidOperation = updates.every((update) =>
     allowedUpdates.includes(update)
@@ -84,6 +90,7 @@ const updateAnime = asyncHandler(async (req, res) => {
   }
 
   if (!isValidOperation) {
+    console.log("YOU CANT DO THAT");
     res.status(400);
     throw new Error("Inalvalid updates.");
   }

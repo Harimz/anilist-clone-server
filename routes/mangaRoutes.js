@@ -15,6 +15,6 @@ router.post("/", authRequired, addManga);
 
 router.delete("/:id", authRequired, deleteManga);
 
-router.patch("/:id", authRequired, updateManga);
+router.put("/:id", authRequired, updateManga);
 
 module.exports = router;

@@ -19,6 +19,7 @@ const addManga = asyncHandler(async (req, res) => {
     endDate,
     mangaType,
     volumeCount,
+    totalRereads,
     note,
   } = req.body;
 
@@ -38,6 +39,7 @@ const addManga = asyncHandler(async (req, res) => {
       mangaType,
       volumeCount,
       note,
+      totalRereads,
       user: req.user._id,
     });
 
@@ -73,6 +75,8 @@ const updateManga = asyncHandler(async (req, res) => {
     "volumesRead",
     "startDate",
     "endDate",
+    "totalRereads",
+    "note",
   ];
   const isValidOperation = updates.every((update) =>
     allowedUpdates.includes(update)
