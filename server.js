@@ -2,7 +2,6 @@ const express = require("express");
 const dotenv = require("dotenv");
 const cors = require("cors");
 const connectDB = require("./config/db");
-const bodyParser = require("body-parser");
 
 const userRoutes = require("./routes/userRoutes");
 const animeRoutes = require("./routes/animeRoutes");
@@ -30,5 +29,7 @@ app.use("/api/status", statusRoutes);
 
 app.use(notFound);
 app.use(errorHandler);
+
+app.set("port", process.env.PORT || 5000);
 
 app.listen(process.env.PORT || 5000, () => console.log(`Server is running...`));
