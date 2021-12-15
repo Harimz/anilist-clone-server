@@ -30,6 +30,4 @@ app.use("/api/status", statusRoutes);
 app.use(notFound);
 app.use(errorHandler);
 
-app.set("port", process.env.PORT || 5000);
-
 app.listen(process.env.PORT || 5000, () => console.log(`Server is running...`));
