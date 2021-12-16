@@ -16,7 +16,9 @@ front end repo found [here](https://github.com/Harimz/anilist-clone-server)
    Should look like this
    
    MONGO_URL=your url
+   
    JWT_SECRET=yoursuperjwtsecret
+   
    JWT_EXPIRES_IN=60d
 
 2. Install dependancies
