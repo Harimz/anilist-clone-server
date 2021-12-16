@@ -23,7 +23,7 @@ const addAnime = asyncHandler(async (req, res) => {
     totalRewatches,
   } = req.body;
 
-  console.log(image);
+  console.log("We in here");
 
   if (!title || !animeID) {
     res.status(400);
